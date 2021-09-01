@@ -1,5 +1,37 @@
-## Install Docker Engine ###
+##install bridge##
+1. yum install bridge-utils ##install bridge network##
+
+
+## Install Docker ###
+
+--setup repositories--
 1. yum install -y yum-utils
 2. yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo3.
+    
+3. yum install docker-ce docker-ce-cli containerd.io  ##install docker engine##
+4. systemctl start docker   ##start docker##
+5. docker run hello-world
+
+###install docker compose###
+1. curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+2. chmod +x /usr/local/bin/docker-compose  ##execute about permission file##
+3. docker-compose --version ##test version docker compose##
+
+create file docker-compose.yml on path /usr/local/bin
+create file setup.sh on path /root
+chmod +x setup.sh   ##privilage execute file setup.sh##
+
+
+docker-compose up -d ##execute file docker-compose.yml##
+docker ps ##check about container docker up##
+
+./setup.sh ##execute file setup
+
+
+akses redash on your ip address:5000
+
+
+
+
